@@ -50,5 +50,6 @@ public class Enemy : MonoBehaviour
         {
             direction = collision.GetComponent<ChangeDirection>().newDirection;
         }
+        if(collision.GetComponent<Projectile>)
     }
 }
