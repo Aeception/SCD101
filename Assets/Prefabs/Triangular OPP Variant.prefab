@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: popcount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7512679926363035922, guid: 446a99ebe8e4da14784717de80302700, type: 3}
+      propertyPath: enemyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8376399160143410773, guid: 446a99ebe8e4da14784717de80302700, type: 3}
       propertyPath: m_Name
       value: Triangular OPP Variant
