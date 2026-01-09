@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour
     public int damage;
     public int reach;
     public int bulletSpeed;
-    public int reload;
+    public float reload;
     public List<Enemy> oppReach;
     private CircleCollider2D col;
     public GameObject projectilePrefab;

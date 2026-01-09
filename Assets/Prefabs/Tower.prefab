@@ -156,6 +156,6 @@ MonoBehaviour:
   damage: 1
   reach: 2
   bulletSpeed: 20
-  reload: 1
+  reload: 0.5
   oppReach: []
   projectilePrefab: {fileID: 8574530398614510752, guid: 45152fbca17839c4fbdaeef4878e2aaf, type: 3}
