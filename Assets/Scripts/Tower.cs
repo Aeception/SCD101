@@ -9,9 +9,14 @@ public class Tower : MonoBehaviour
     public int reach;
     public int bulletSpeed;
     public float reload;
+    public int price;
     public List<Enemy> oppReach;
     private CircleCollider2D col;
     public GameObject projectilePrefab;
+    public enum TowerType
+    {
+        DartGoggins, Basic, Sniper
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
