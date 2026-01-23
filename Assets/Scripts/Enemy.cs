@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     {
         Left, Right, Up, Down
     }
+    private GameManager gameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +30,7 @@ public class Enemy : MonoBehaviour
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         ColorChange();
         originalPopcount = popcount;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -67,6 +70,7 @@ public class Enemy : MonoBehaviour
         {
             int damage = collision.GetComponent<Projectile>().damage;
             popcount -= damage;
+            gameManager.money += 1;
             ColorChange();
             Destroy(collision.gameObject);
             if(popcount <= 0)
