@@ -5,7 +5,9 @@ public class UIManager : MonoBehaviour
 {
     public TMP_Text hpText;
     public TMP_Text moneyText;
+    public TMP_Text waveText;
     public GameManager gameManager;
+    public SpawnManager spawnManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,5 +19,6 @@ public class UIManager : MonoBehaviour
     {
         hpText.text = "HP: " + gameManager.hp;
         moneyText.text = "Money: " + gameManager.money;
+        waveText.text = "Round " + spawnManager.round;
     }
 }

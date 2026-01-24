@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.Collections;
 using UnityEngine;
 
@@ -11,11 +12,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject squarePrefab;
     public Transform startingPosition;
     public float defaultWaitTime = 0.75f;
-    List<string> R1 = new List<string> {"c1", "w2", "4c1", "w1", "s1", "c1", "w1", "2c1", "w1", "2c1"};
-    List<string> R2 = new List<string> {"c3", "t2", "w2", "s4", "2c1", "5c3", "w1", "2c3", "w1", "c5", "w1"};
-    List<string> R3 = new List<string> {"5c1", "w5", "5c1", "w3"};
-    List<string> R4 = new List<string> {"3c1", "w1", "2c2", "2c3", "w1", "16"};
-    List<string> R5 = new List<string> {"2t3", "4t1", "1t6", "w3", "1t3", "1t6"};
+    public int round = 0;
+    static List<string> R1 = new List<string> {"c1", "w2", "4c1", "w1", "s1", "c1", "w1", "2c1", "w1", "2c1"};
+    static List<string> R2 = new List<string> {"c3", "t2", "w2", "s4", "2c1", "5c3", "w1", "2c3", "w1", "c5", "w1"};
+    static List<string> R3 = new List<string> {"5c1", "w5", "5c1", "w3"};
+    static List<string> R4 = new List<string> {"3c1", "w1", "2c2", "2c3", "w1", "16"};
+    static List<string> R5 = new List<string> {"2t3", "4t1", "1t6", "w3", "1t3", "1t6"};
+    static List<List<string>> Rounds = new List<List<string>> {R1, R2, R3, R4, R5};
     // 4c1 , 4 is amount spawned, c1 is type, w2 wait how much seconds t "2" = the STRENGTH (color)
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -74,5 +77,10 @@ public class SpawnManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void StartRound()
+    {
+        StartCoroutine(spawnlevel(Rounds[round]));
+        round++;
     }
 }
