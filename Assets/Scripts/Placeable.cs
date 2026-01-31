@@ -4,7 +4,7 @@ public class Placeable : MonoBehaviour
 {
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private bool isPlaced = false;
+    public bool isPlaced = false;
     void Start()
     {
         

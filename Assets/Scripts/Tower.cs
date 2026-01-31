@@ -15,14 +15,13 @@ public class Tower : MonoBehaviour
     public GameObject projectilePrefab;
     public enum TowerType
     {
-        DartGoggins, Basic, Sniper
+        DartGoggins, Basic, Sniper, CircleShooter
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         col = GetComponent<CircleCollider2D>();
         col.radius = reach;
-        StartCoroutine(ShootAtEnemy());
     }
 
     // Update is called once per frame
@@ -40,30 +39,39 @@ public class Tower : MonoBehaviour
         Enemy enemyScript = collision.GetComponent<Enemy>();
         oppReach.Remove(enemyScript);
     }
-    void Shoot(Vector3 target)
+    public void Shoot(Vector3 target)
     {
-        // Calculate direction to shoot toward
-        Vector3 origin = transform.position;
-        Vector3 direction = (target - origin).normalized; // This makes it just the direction and not affected by how far it is
+        if (GetComponent<Placeable>().isPlaced)
+        {
+            
+        
+            // Calculate direction to shoot toward
+            Vector3 origin = transform.position;
+            Vector3 direction = (target - origin).normalized; // This makes it just the direction and not affected by how far it is
 
-        // Generate new Projectile
-        GameObject projectile = Instantiate(projectilePrefab);
-        projectile.transform.position = origin; // Set initial position of projectile at Tower
+            // Generate new Projectile
+            GameObject projectile = Instantiate(projectilePrefab);
+            projectile.transform.position = origin; // Set initial position of projectile at Tower
 
-        // Add force to projectile's rigidbody
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        rb.AddForce(direction * bulletSpeed, ForceMode2D.Impulse); // We use the bulletSpeed variable here
+            // Add force to projectile's rigidbody
+            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+            rb.AddForce(direction * bulletSpeed, ForceMode2D.Impulse); // We use the bulletSpeed variable here
+        }
     }
-    IEnumerator ShootAtEnemy()
+    public IEnumerator ShootAtEnemy()
     {
         while (true)
         {
             if(oppReach.Count > 0) // If there are enemies in reach
             {
-                Shoot(oppReach[0].transform.position); // Shoot towards the first enemy in the list
+                ShootActions();
             }
             yield return new WaitForSeconds(reload); // Wait to try again for the "reload" time
         }
+    }
+    public virtual void ShootActions()
+    {
+        
     }
 
 }

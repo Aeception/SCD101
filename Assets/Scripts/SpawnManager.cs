@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject squarePrefab;
     public Transform startingPosition;
     public float defaultWaitTime = 0.75f;
+    public Button startRoundButton;
     public int round = 0;
     static List<string> R1 = new List<string> {"c1", "w2", "4c1", "w1", "s1", "c1", "w1", "2c1", "w1", "2c1"};
     static List<string> R2 = new List<string> {"c3", "t2", "w2", "s4", "2c1", "5c3", "w1", "2c3", "w1", "c5", "w1"};
@@ -23,7 +25,13 @@ public class SpawnManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(spawnlevel(R5));
+        
+    }
+    IEnumerator DisableButton()
+    {
+        startRoundButton.interactable = false;
+        yield return new WaitForSeconds(3);
+        startRoundButton.interactable = true;
     }
     IEnumerator spawnlevel(List <string> round)
     {
@@ -82,5 +90,6 @@ public class SpawnManager : MonoBehaviour
     {
         StartCoroutine(spawnlevel(Rounds[round]));
         round++;
+        StartCoroutine(DisableButton());
     }
 }

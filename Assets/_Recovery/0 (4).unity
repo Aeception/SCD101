@@ -335,7 +335,6 @@ MonoBehaviour:
   squarePrefab: {fileID: 1423431482370205736, guid: d76d187623ab0fe4ab92d9e6972fdda7, type: 3}
   startingPosition: {fileID: 147142141}
   defaultWaitTime: 0.75
-  startRoundButton: {fileID: 389586880}
   round: 0
 --- !u!4 &147142141
 Transform:
