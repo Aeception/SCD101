@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4097478633748015239}
   - component: {fileID: 648785507422658432}
   - component: {fileID: 6423152624544503462}
-  - component: {fileID: -6578634199499908452}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -105,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d2ef6e06426c7439934d4657801da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Placeable
+  isPlaced: 0
 --- !u!58 &6423152624544503462
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,22 +141,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.21133333}
   m_Radius: 0.5
---- !u!114 &-6578634199499908452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202397148987517708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4deeff84fa9d346842c0472423c8d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tower
-  damage: 1
-  reach: 2
-  bulletSpeed: 20
-  reload: 0.5
-  price: 30
-  oppReach: []
-  projectilePrefab: {fileID: 8574530398614510752, guid: 45152fbca17839c4fbdaeef4878e2aaf, type: 3}

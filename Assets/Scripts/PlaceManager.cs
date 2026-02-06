@@ -1,8 +1,10 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlaceManager : MonoBehaviour
 {   
     public GameObject towerPrefab;
+    public GameObject CircleShooterPrefab;
     public GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +28,18 @@ public class PlaceManager : MonoBehaviour
                 gameManager.money -= towerPrefab.GetComponent<Tower>().price;
                 return true;
             }
+
+
+        }
+        if(type == Tower.TowerType.CircleShooter)
+        {
+            if(money >= CircleShooterPrefab.GetComponent<Tower>().price)
+            {
+                Instantiate(CircleShooterPrefab);
+                gameManager.money -= CircleShooterPrefab.GetComponent<Tower>().price;
+                return true;
+            }
+
         }
         if(type == Tower.TowerType.DartGoggins)
         {

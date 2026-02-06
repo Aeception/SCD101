@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     {
         placeManager.SpawnTower(Tower.TowerType.Basic, money);
     }
+    public void BuyCircleShooterTower()
+    {
+        placeManager.SpawnTower(Tower.TowerType.CircleShooter, money);
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<Enemy>() != null) // If the thing that collided with the GameManager is an Enemy...
