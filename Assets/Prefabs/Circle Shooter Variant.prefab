@@ -102,10 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b560b04cff576c46980d9003fd52738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CircleShooter
-  damage: 3
-  reach: 3
-  bulletSpeed: 30
-  reload: 0.2
+  damage: 1
+  reach: 2
+  bulletSpeed: 2
+  reload: 2
   price: 300
   oppReach: []
   projectilePrefab: {fileID: 8574530398614510752, guid: 45152fbca17839c4fbdaeef4878e2aaf, type: 3}
+  RangeSprite: {fileID: 8655110348051048897}
+--- !u!1 &8655110348051048897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4571899893472077158, guid: 43c1bad310f16d94e9ca184569f8a6d3, type: 3}
+  m_PrefabInstance: {fileID: 5147482139833355431}
+  m_PrefabAsset: {fileID: 0}

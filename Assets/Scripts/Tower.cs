@@ -13,6 +13,7 @@ public class Tower : MonoBehaviour
     public List<Enemy> oppReach;
     private CircleCollider2D col;
     public GameObject projectilePrefab;
+    public GameObject RangeSprite;
     public enum TowerType
     {
         DartGoggins, Basic, Sniper, CircleShooter
@@ -22,6 +23,7 @@ public class Tower : MonoBehaviour
     {
         col = GetComponent<CircleCollider2D>();
         col.radius = reach;
+        RangeSprite.transform.localScale = new Vector3(reach*2,reach*2,1);
     }
 
     // Update is called once per frame
@@ -56,6 +58,7 @@ public class Tower : MonoBehaviour
             // Add force to projectile's rigidbody
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.AddForce(direction * bulletSpeed, ForceMode2D.Impulse); // We use the bulletSpeed variable here
+            Destroy(projectile, Time.deltaTime*(reach/bulletSpeed));
         }
     }
     public IEnumerator ShootAtEnemy()
@@ -64,6 +67,7 @@ public class Tower : MonoBehaviour
         {
             if(oppReach.Count > 0) // If there are enemies in reach
             {
+                Debug.Log(oppReach);
                 ShootActions();
             }
             yield return new WaitForSeconds(reload); // Wait to try again for the "reload" time

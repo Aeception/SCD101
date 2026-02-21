@@ -6,6 +6,7 @@ public class CircleShooter : Tower
     protected override void Start()
     {
         base.Start();
+        StartCoroutine(ShootAtEnemy());
     }
 
     // Update is called once per frame

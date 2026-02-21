@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423152624544503462, guid: 43c1bad310f16d94e9ca184569f8a6d3, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -78,9 +82,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Basic
   damage: 3
-  reach: 20
+  reach: 3
   bulletSpeed: 30
   reload: 0.2
   price: 301
   oppReach: []
   projectilePrefab: {fileID: 8574530398614510752, guid: 45152fbca17839c4fbdaeef4878e2aaf, type: 3}
+  RangeSprite: {fileID: 4290204879523632375}
+--- !u!1 &4290204879523632375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4571899893472077158, guid: 43c1bad310f16d94e9ca184569f8a6d3, type: 3}
+  m_PrefabInstance: {fileID: 359012680224993681}
+  m_PrefabAsset: {fileID: 0}

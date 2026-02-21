@@ -2797,7 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   towerPrefab: {fileID: 1465004648614861469, guid: b2e79ccd02d35dd4c90a12240d4fd38c, type: 3}
-  CircleShooterPrefab: {fileID: 0}
+  CircleShooterPrefab: {fileID: 6323126916777289643, guid: 8f4efaa3c1e467e499819a7084c37ea6, type: 3}
   gameManager: {fileID: 319009608}
 --- !u!4 &257373609
 Transform:
